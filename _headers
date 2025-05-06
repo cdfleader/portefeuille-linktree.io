@@ -1,0 +1,2 @@
+/*
+  Content-Security-Policy: default-src 'self'; font-src 'self' data: https://cdfleader.github.io https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://www.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self'; 
