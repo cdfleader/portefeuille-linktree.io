@@ -28,7 +28,7 @@ interface Competence {
   categorie: string;
   skills: Array<{
     nom: string;
-    niveau: number;
+    dateDebut: string;
   }>;
 }
 
@@ -96,51 +96,51 @@ const competences: Competence[] = [
   {
     categorie: 'Langages de programmation',
     skills: [
-      { nom: 'JavaScript', niveau: 90 },
-      { nom: 'TypeScript', niveau: 85 },
-      { nom: 'Python', niveau: 75 },
-      { nom: 'PHP', niveau: 65 },
-      { nom: 'Java', niveau: 60 }
+      { nom: 'JavaScript', dateDebut: 'Janvier 2018' },
+      { nom: 'TypeScript', dateDebut: 'Mars 2019' },
+      { nom: 'Python', dateDebut: 'Septembre 2019' },
+      { nom: 'PHP', dateDebut: 'Juin 2017' },
+      { nom: 'Java', dateDebut: 'Février 2020' }
     ]
   },
   {
     categorie: 'Front-End',
     skills: [
-      { nom: 'React', niveau: 90 },
-      { nom: 'HTML5/CSS3', niveau: 95 },
-      { nom: 'Vue.js', niveau: 80 },
-      { nom: 'Angular', niveau: 70 },
-      { nom: 'SASS/SCSS', niveau: 85 }
+      { nom: 'React', dateDebut: 'Mai 2019' },
+      { nom: 'HTML5/CSS3', dateDebut: 'Janvier 2017' },
+      { nom: 'Vue.js', dateDebut: 'Novembre 2020' },
+      { nom: 'Angular', dateDebut: 'Avril 2021' },
+      { nom: 'SASS/SCSS', dateDebut: 'Mars 2018' }
     ]
   },
   {
     categorie: 'Back-End',
     skills: [
-      { nom: 'Node.js', niveau: 85 },
-      { nom: 'Express', niveau: 80 },
-      { nom: 'Django', niveau: 70 },
-      { nom: 'Laravel', niveau: 65 },
-      { nom: 'Spring Boot', niveau: 60 }
+      { nom: 'Node.js', dateDebut: 'Juin 2019' },
+      { nom: 'Express', dateDebut: 'Août 2019' },
+      { nom: 'Django', dateDebut: 'Janvier 2020' },
+      { nom: 'Laravel', dateDebut: 'Septembre 2018' },
+      { nom: 'Spring Boot', dateDebut: 'Mars 2021' }
     ]
   },
   {
     categorie: 'Base de données',
     skills: [
-      { nom: 'MongoDB', niveau: 85 },
-      { nom: 'MySQL', niveau: 80 },
-      { nom: 'PostgreSQL', niveau: 75 },
-      { nom: 'Firebase', niveau: 80 },
-      { nom: 'Redis', niveau: 65 }
+      { nom: 'MongoDB', dateDebut: 'Juillet 2019' },
+      { nom: 'MySQL', dateDebut: 'Mars 2017' },
+      { nom: 'PostgreSQL', dateDebut: 'Octobre 2019' },
+      { nom: 'Firebase', dateDebut: 'Février 2020' },
+      { nom: 'Redis', dateDebut: 'Août 2021' }
     ]
   },
   {
     categorie: 'DevOps & Outils',
     skills: [
-      { nom: 'Git', niveau: 90 },
-      { nom: 'Docker', niveau: 80 },
-      { nom: 'AWS', niveau: 75 },
-      { nom: 'CI/CD', niveau: 70 },
-      { nom: 'Linux', niveau: 85 }
+      { nom: 'Git', dateDebut: 'Février 2017' },
+      { nom: 'Docker', dateDebut: 'Septembre 2019' },
+      { nom: 'AWS', dateDebut: 'Janvier 2020' },
+      { nom: 'CI/CD', dateDebut: 'Mai 2020' },
+      { nom: 'Linux', dateDebut: 'Novembre 2016' }
     ]
   }
 ];
@@ -227,18 +227,18 @@ const FormationCard: React.FC<{ formation: Formation }> = ({ formation }) => {
 };
 
 // Composant pour les compétences
-const SkillBar: React.FC<{ skill: { nom: string; niveau: number } }> = ({ skill }) => {
+const SkillBar: React.FC<{ skill: { nom: string; dateDebut: string } }> = ({ skill }) => {
   return (
     <div className="skill-bar">
       <div className="skill-bar__info">
         <span className="skill-bar__name">{skill.nom}</span>
-        <span className="skill-bar__percent">{skill.niveau}%</span>
+        <span className="skill-bar__date">Depuis {skill.dateDebut}</span>
       </div>
       <div className="skill-bar__bg">
         <motion.div
           className="skill-bar__progress"
           initial={{ width: 0 }}
-          animate={{ width: `${skill.niveau}%` }}
+          animate={{ width: '100%' }}
           transition={{ duration: 1, delay: 0.2 }}
         />
       </div>

@@ -478,6 +478,80 @@
 }
 
 /* Responsive design */
+@media (max-width: 767px) {
+  .portfolio__header {
+    padding: 2rem 1rem;
+  }
+  
+  .portfolio__content {
+    padding: 0 1rem;
+  }
+  
+  .portfolio__apps-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  
+  .app-card {
+    width: 140px;
+    margin-right: 0.8rem;
+    padding: 0.8rem;
+  }
+  
+  .app-card__icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .app-card__title {
+    font-size: 0.8rem;
+  }
+
+  .app-card__subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .app-details-modal__content {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .app-details-modal__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .app-details-modal__screenshots {
+    gap: 0.5rem;
+  }
+  
+  .app-details-modal__screenshot {
+    height: 300px;
+  }
+  
+  .app-details-modal__features-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio__tablet-container {
+    flex-direction: column;
+  }
+  
+  .portfolio__tablet-nav {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+
+  .portfolio__simple-tablet-frame {
+    width: 220px;
+    height: 330px;
+  }
+
+  .portfolio__simple-tablet-screen {
+    height: 290px;
+  }
+}
+
 @media (min-width: 768px) {
   .portfolio__header {
     padding: 3rem 2rem;

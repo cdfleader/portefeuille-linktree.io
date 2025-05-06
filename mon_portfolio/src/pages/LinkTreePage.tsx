@@ -21,7 +21,7 @@ const LinkTreePage: React.FC = () => {
   const socialLinks = [
     {
       name: 'Portfolio',
-      url: '/portefolio',
+      url: '/portfolio',
       icon: <PortfolioIcon />,
       style: ButtonStyle.Primary
     },
