@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/portefolio%3Alinktree/sw.js', { scope: '/portefolio%3Alinktree/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/portefeuille-linktree.io/sw.js', { scope: '/portefeuille-linktree.io/' })})}
