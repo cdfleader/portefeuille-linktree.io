@@ -2,20 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: https://cdfleader.github.io https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://www.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self';" />
     <title>Redirection</title>
     <script type="text/javascript">
-      // Redirection simple vers la page d'index avec le chemin actuel dans l'URL
+      // Cette partie est pour GitHub Pages avec des chemins personnalisés
       var segmentCount = 1;
-      var location = window.location;
-      var repo = '/portefolio%3Alinktree';
+      var l = window.location;
       
-      // Stocke l'URL complète dans sessionStorage
-      sessionStorage.redirect = location.href;
-
-      // Redirige vers la page d'index
-      location.href = location.protocol + '//' + location.hostname + 
-                      (location.port ? ':' + location.port : '') + 
-                      repo + '/index.html';
+      // Stocke l'URL complète dans la session pour la récupérer plus tard
+      sessionStorage.redirect = l.href;
+      
+      // Construire l'URL de redirection
+      var rootPath = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+      var repoName = '/portefolio%3Alinktree/';
+      
+      // Rediriger vers la page d'index avec le hash pour que HashRouter puisse fonctionner
+      window.location.href = rootPath + repoName + '#' + l.pathname.slice(repoName.length);
     </script>
   </head>
   <body>
